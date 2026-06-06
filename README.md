@@ -12,6 +12,7 @@ The system is designed for centralized logging, monitoring, and SIEM-style obser
 
 ## Architecture Overview
 
+```
 Client
   │
   ▼
@@ -33,6 +34,7 @@ Filebeat / Logstash             Metricbeat
                 Elasticsearch
                       ▼
                    Kibana UI
+```
 				   
 ## Features
 
