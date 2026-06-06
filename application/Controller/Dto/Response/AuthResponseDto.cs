@@ -1,0 +1,4 @@
+﻿namespace Controller.Dto.Response
+{
+
+}
