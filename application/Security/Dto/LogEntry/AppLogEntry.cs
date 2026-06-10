@@ -1,4 +1,4 @@
-﻿namespace Common.Dto.Log
+﻿namespace Security.Dto.LogEntry
 {
     public class AppLogEntry
     {

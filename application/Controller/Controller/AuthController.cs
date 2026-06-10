@@ -35,6 +35,7 @@ namespace Controller.Controller
         [AllowAnonymous]
         public async Task<IActionResult> Register([FromBody]RegisterRequestDto request)
         {
+            throw new NotImplementedException();
             var existingMail = await _userManager.FindByEmailAsync(request.Email);
             var existingUser = await _userManager.FindByNameAsync(request.Username);
 

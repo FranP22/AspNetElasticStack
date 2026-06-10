@@ -1,4 +1,4 @@
-﻿using Common.Dto.Log;
+﻿using Security.Dto.LogEntry;
 using Logging.Service.Interface;
 using Microsoft.Extensions.Logging;
 

@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Database\Database.csproj" />
+    <ProjectReference Include="..\Security\Security.csproj" />
   </ItemGroup>
 
 </Project>

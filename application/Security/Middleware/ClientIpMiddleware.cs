@@ -1,17 +1,14 @@
-﻿using Logging.Service.Interface;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace Security.Middleware
 {
     public class ClientIpMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly IAppLoggerService<ClientIpMiddleware> _appLoggerService;
 
-        public ClientIpMiddleware(RequestDelegate next, IAppLoggerService<ClientIpMiddleware> logger)
+        public ClientIpMiddleware(RequestDelegate next)
         {
             _next = next;
-            _appLoggerService = logger;
         }
 
         public async Task Invoke(HttpContext context)

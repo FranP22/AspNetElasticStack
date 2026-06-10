@@ -1,5 +1,5 @@
 ﻿
-using Common.Dto.Log;
+using Security.Dto.LogEntry;
 
 namespace Logging.Service.Interface
 {

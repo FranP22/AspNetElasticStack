@@ -15,7 +15,7 @@ using Security.Service.Dto;
 using Security.Service.Interface;
 using System.Text;
 using Serilog;
-using Serilog.Formatting.Compact;
+using Common.Middleware;
 
 Env.Load();
 
@@ -47,9 +47,10 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddTransient(typeof(IAppLoggerService<>), typeof(AppLoggerService<>));
 
+builder.Services.AddSingleton<IClientIpService, ClientIpService>();
+
 builder.Services.AddScoped<ISeederService, SeederService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IClientIpService, ClientIpService>();
 
 // OPTIONS
 var jwtSettings = builder.Configuration.GetSection("Jwt");
@@ -127,6 +128,7 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 });
 
 app.UseMiddleware<ClientIpMiddleware>();
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 
